@@ -8,7 +8,7 @@ const Form = () => {
     const [city, setCity] = useState("")
     const [state, setState] = useState("")
     const [zip, setZip] = useState("")
-    const [terms, setTerms] = useState(false)
+    const [terms, setTerms] = useState('false')
 
     const onHandleSubmit = (e) => {
         e.preventDefault();
@@ -63,7 +63,7 @@ const Form = () => {
   </div>
   <div class="col-12">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value={terms} onChange={(e)=> setTerms(e.target.value = true)} id="invalidCheck2" required/>
+      <input class="form-check-input" type="checkbox" value={terms} onChange={(e)=> setTerms(e.target.value = true)} id="invalidCheck2"/>
       <label class="form-check-label" for="invalidCheck2">
         Agree to terms and conditions
       </label>
