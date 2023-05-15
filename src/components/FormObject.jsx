@@ -8,7 +8,9 @@ const FormObject = () => {
         city: "",
         state: "",
         zip: undefined,
-        terms: "false",
+        terms: "",
+        facebook: "",
+        instagram: "",
     })
 
     const onhandlechange = (e) => {
@@ -84,7 +86,7 @@ return (
   </div>
   <div class="col-12">
     <div class="form-check">
-      <input class="form-check-input is-invalid" type="checkbox" value={formData.terms} name='terms' id="invalidCheck3" aria-describedby="invalidCheck3Feedback" onChange={(e)=>setFormData.terms(e.target.value = true)} required/>
+      <input class="form-check-input is-invalid" type="checkbox" value={formData.terms? false : true} name='terms' id="invalidCheck3" aria-describedby="invalidCheck3Feedback" onChange={onhandlechange}/>
       <label class="form-check-label" for="invalidCheck3">
         Agree to terms and conditions
       </label>
@@ -92,6 +94,21 @@ return (
         You must agree before submitting.
       </div>
     </div>
+  </div>
+  <div>
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="facebook" id="flexRadioDefault1" value={formData.facebook? false : true} onChange={onhandlechange}/>
+  <label class="form-check-label" for="flexRadioDefault1">
+    Facebook
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="instagram" id="flexRadioDefault2" onChange={onhandlechange} value={formData.instagram? false : true} />
+  <label class="form-check-label" for="flexRadioDefault2">
+    Instagram
+  </label>
+</div>
+
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
